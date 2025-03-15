@@ -45,6 +45,7 @@ public class CustomerController {
     @Operation(summary = "Yeni müşteri ekle",description = "Verilen müşterileri listeye ekler")
     @PostMapping
     public ResponseEntity<Customer> addCustomer(@RequestBody Customer customer){
+        System.out.println("müşteri eklendi");
         Customer savedCustomer = customerService.addCustomer(customer);
         return ResponseEntity.ok(savedCustomer);
     }
